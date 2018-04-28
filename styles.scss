@@ -1,0 +1,41 @@
+.nav-item {
+    color: white;
+    margin: 10px;
+    padding: 0px 20px;
+
+    &:hover {
+        color:grey;
+    }
+
+    a:link, a:visited {
+        color:white;
+        
+    }
+
+    a:hover {
+        color: grey;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+// .nav-item:hover {
+//     color: grey;
+// }
+
+// /* .nav-item a:hover {
+//     text-decoration: none;
+//     color: grey;
+// } */
+
+// .nav-item a:link, a:visited {
+//     text-decoration: none;
+//     color: white;
+// }
+
+// .nav-item a:hover {
+//     text-decoration: none;
+//     color: grey;
+// }
