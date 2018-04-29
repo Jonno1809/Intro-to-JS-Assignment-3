@@ -27,3 +27,16 @@ a {
     text-decoration: none;
     color: grey;
 }
+
+#progress-bar {
+    height: 10px;
+    background-color: grey;
+    width: 100%;
+    position: fixed;
+}
+
+#progress-indicator {
+    height: 10px;
+    background-color: yellowgreen;
+    width: 0%;
+}
