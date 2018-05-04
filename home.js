@@ -1,10 +1,14 @@
 $(document).ready(function () {
+    // Set grey default state of scroll progress on document ready
     advanceProgressBar(calculateScrollPercentage());
 
     // Scroll event listener
     $(document).scroll(function () { 
         advanceProgressBar(calculateScrollPercentage());
     });
+
+    // Bootstrap Scrollspy - automatically update links in navbar on scroll
+    $('body').scrollspy({target: ".navbar", offset: 100});
 });
 
 /**
