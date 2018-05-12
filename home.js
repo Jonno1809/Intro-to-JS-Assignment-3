@@ -1,6 +1,13 @@
 $(document).ready(function () {
-    // Set grey default state of scroll progress on document ready
-    advanceProgressBar(calculateScrollPercentage());
+    // // Set grey default state of scroll progress on document ready
+    // advanceProgressBar(calculateScrollPercentage());
+
+    $('#fullpage').fullpage({
+        onLeave: function(index, nextIndex, direction) {
+            advanceProgressBar(calculateScrollPercentage());
+        }
+    });
+
 
     // Scroll event listener
     $(document).scroll(function () { 

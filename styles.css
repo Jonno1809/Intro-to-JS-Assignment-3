@@ -5,7 +5,7 @@ body {
     /* padding-top: 56px; */
 }
 
-main {
+#bgcolour-wrapper {
     background-color: #4f4639;
     color: white;
 }
