@@ -1,38 +1,31 @@
 var khGames = getKhJSONDetails(); // Array of all KH games
+var bundledGames = [] //Array of bundled kh games
 
 $(document).ready(function () {
-    // // Set grey default state of scroll progress on document ready
-    // advanceProgressBar(calculateScrollPercentage());
-
+    // We want these done before the fullpage.js gets set up
     sortGamesByReleaseOrder();
     renderAllGamesTimeline();
 
-    // Setup fullpage
+    // Vue used for bundled games section
+    var bundleVue = new Vue({
+        el: "#bundle-order",
+        data: {
+            bundledGames
+        }
+    })
+    
+    // Setup fullpage.js
     $('#fullpage').fullpage({
         navigation: true,
+        keyboardScrolling: true,
         onLeave: function(index, nextIndex, direction) {
             advanceProgressBar(calculateScrollPercentage(nextIndex));
         },
         afterRender: function() {
             advanceProgressBar(calculateScrollPercentage(1)); // Default scroll progress bar
+            createPieChart();
         }
     });
-    
-    // var timelineVue = new Vue({
-    //     el: '#timeline',
-    //     data: {
-    //         khGames
-    //     }
-    // });
-    // Scroll event listener
-    // $(document).scroll(function () { 
-    //     advanceProgressBar(calculateScrollPercentage());
-    // });
-
-    // Bootstrap Scrollspy - automatically update links in navbar on scroll
-    // $('body').scrollspy({target: ".navbar"});
-
-    // console.log(sortGamesByReleaseOrder());
 });
 
 /**
@@ -145,33 +138,95 @@ function renderAllGamesTimeline() {
 
     khGames.forEach(game => {
         if (!game.games) { // Don't include the bundles - they'll come later
-            $('#stats').before(
+            $('#bundle-order').before( // Using before instead of after so that it's in order
                 '<div class="section pad col-md-6" id="'+i+'">'+ 
-                "<img class='col-md-5' src=images/" + game.image +">" +
+                '<div id="info"'+i+">"+
+                "<img class='col-md-5' src=images/" + game.image +" id=image"+i+">" +
                 "<p>Name: "+game.name+"</p>" +
                 "<p>Year released: "+game.year+"</p>" +
                 "<p>Platform: "+game.platform+"</p>" +
-                '</div>'
+                '</div></div>'
             );
         }
 
-        var element = $('#'+ i)
+        var element = $('#info'+ i)
 
         if (game.score) {
             element.append("<p>Metacritic score: "+game.score+"</p>")
         }
         if (!(i % 2 == 0)) {
-            element.addClass("offset-md-6 text-right")
+            $('#'+i).addClass("offset-md-6 text-right")
         }
 
-        if (game.games) {
-            element.append("<p>Games in this bundle: </p><ul>")
-            game.games.forEach(item => {
-                element.append("<li class='rtl'>" + item + "</li>")
-            });
-            element.append("</ul>")
+        // If a game bundle, don't render - we'll use Vue.
+        if (game.games && game.platform == 'PlayStation 4') {
+            bundledGames.push(game);
         }
 
         i++;
     });
+
+}
+/**
+ * Returns only the games in the series that contain other games.
+ */
+function getBundledGames() {
+    var bundledGames = [];
+
+    sortGamesByPlayOrder(); // Will have to do it anyway, may as well do it here.
+    
+    khGames.forEach(game => {
+        if (game.games || game.games.length > 0) {
+            bundledGames.push(game);
+        }
+    });
+    return bundledGames;
+}
+
+/**
+ * This creates a pie chart based on the number of sales of each game
+ */
+function createPieChart() {
+    var names = [];
+    var sales = [];
+    var colours = []
+
+    // RGB for the pie chart sections
+    var red = 0;
+    var blue = 0;
+    var green = 0;
+
+    khGames.forEach(game => {
+        if (game.sold) {
+            names.push(game.name)
+            sales.push(game.sold)
+
+            // Create random rgb colours (0-255)
+            red = Math.floor(Math.random() * 256)
+            blue = Math.floor(Math.random() * 256)
+            green = Math.floor(Math.random() * 256)
+            var rgbString = 'rgb('+red+','+green+','+blue+')'
+            colours.push(rgbString)
+        }
+    });
+
+
+    var canvas = $('#pie-chart')
+    var chart = new Chart(canvas, {
+        type: 'pie',
+        data: {
+            labels: names,
+            datasets: [{
+                data: sales,
+                backgroundColor: colours
+            }]
+        },
+        options: {
+            legend: {
+                labels: {
+                    fontColor: '#FFF'
+                }
+            }
+        }
+    })
 }

@@ -3,6 +3,7 @@ body {
     .sticky-top gets around this but doesn't work with IE (what a surprise) */
     /* EDIT: No longer being used (switched back to .sticky-top), but kept here just in case I decide to switch back */
     /* padding-top: 56px; */
+    background-color: #4f4639;
 }
 
 /* Changing the colour of the body isn't working so this is a workaround */
@@ -50,7 +51,7 @@ img {
     padding-right: 0px;
 }
 
-.game {
-    border-color: white;
-    border-width: 2px;
-}
+/* #pie-chart {
+    height: 200px;
+    width: 200px;
+} */

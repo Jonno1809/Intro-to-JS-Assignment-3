@@ -13,18 +13,20 @@
         <link rel="stylesheet" type="text/css" href="styles.css">
 
         <!-- Bootstrap files -->
-        <!-- Bootstrap JQuery, Popper.js, and JS -->
+        <!-- Bootstrap JQuery and JS -->
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
-            crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
             crossorigin="anonymous"></script>
 
-        <!-- fullPage.js -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.js"></script>
-
-        <!-- Vue.js -->
-        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+            
+            <!-- fullPage.js -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.js"></script>
+            
+            <!-- Vue.js -->
+            <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+            
+            <!-- Chart.js -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
 
         <!-- My own JS file -->
         <script src="home.js"></script>
@@ -32,21 +34,6 @@
     </head>
 
     <body>
-        <!-- Navigation bar
-        <nav class="navbar navbar-expand-sm navbar-dark bg-dark d-flex justify-content-center sticky-top">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link active" href="#heading1">Heading1</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#heading2">Heading2</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#heading3">Heading3</a>
-                </li>
-            </ul>
-        </nav> -->
-        
         <!-- Scroll progress bar -->
         <div id="progress-bar">
             <div id="progress-indicator"></div>
@@ -54,15 +41,31 @@
         
         <div id="bgcolour-wrapper">
             <div id="fullpage">
-                <div class="container-fluid">
+                <div class="container">
+                    <!-- Intro section -->
                     <div class="section row col-md-10 offset-md-1 text-center" id="intro-section">
                         <h1 class="display-1" id="KH-heading">Kingdom Hearts Timeline</h1>
-                        <p>In 2002, a legendary video game series was born. This series combined two ideas that nobody would have ever thought would work together - Final Fantasy and Disney, and it took the world by storm.</p>
-                        <p>Over the years however, it has created a convoluted plot which can scare away newcomers with over 10 entries across different consoles. Never fear, for I have created this to help.</p>
-                        <p>You could buy and play them individual in order of release across all different platforms...</p>
+                        <h4>In 2002, a legendary video game series was born. This series combined two ideas that nobody would have ever thought would work together - Final Fantasy and Disney, and it took the world by storm.</p>
+                        <h4>Over the years however, it has created a convoluted plot which can scare away newcomers with over 10 entries across different consoles. Never fear, for I have created this to help.</p>
+                        <h4>You <i>could</i> buy and play them individual in order of release across all different platforms...</p>
                     </div>
-                    <div class="section" id="stats">
-                        <h1 id="heading3">Heading3</h1>
+                    <!-- Bundled games section -->
+                    <div class="section" id="bundle-order">
+                        <div class="row  col-md-10 offset-md-1 text-center">
+                            <h2>Or, you could just buy the bundles and play them in order</h2>
+                            <div class="col-md-6" v-for="game in bundledGames">
+                                <img class="bundle-img col-md-4" v-bind:src="'images/'+game.image">
+                                <p>Name: {{ game.name }}</p>
+                                <p>Year: {{ game.year}} </p>
+                                <p>Platform: {{ game.platform}} </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Stats -->
+                    <div class="row section col-md-10 offset-md-1 text-center" id="stats">
+                        <h1>Here's how many copies each game sold globally</h1>
+                        <!-- Pie Chart -->
+                        <canvas class="col-md-10 offset-md-1"id="pie-chart"> </canvas>
                     </div>
                 </div>
             </div>
