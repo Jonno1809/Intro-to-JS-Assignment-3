@@ -3,9 +3,9 @@
         "name": "Kingdom Hearts",
         "year": "2002",
         "platform": "PlayStation 2",
-        "play order": 1,
-        "release order": 1,
-        "chronological order": 5,
+        "playOrder": 1,
+        "releaseOrder": 1,
+        "chronologicalOrder": 5,
         "sold": 5900000,
         "score": 85
     },
@@ -13,9 +13,9 @@
         "name": "Kingdom Hearts: Chain of Memories",
         "year": "2004",
         "platform": "GameBoy Advance",
-        "play order": 2,
-        "release order": 2,
-        "chronological order": 6,
+        "playOrder": 2,
+        "releaseOrder": 2,
+        "chronologicalOrder": 6,
         "sold": 1550000,
         "score": 76
     },
@@ -23,9 +23,9 @@
         "name": "Kingdom Hearts II",
         "year": "2005",
         "platform": "PlayStation 2",
-        "play order": 3,
-        "release order": 3,
-        "chronological order": 8,
+        "playOrder": 3,
+        "releaseOrder": 3,
+        "chronologicalOrder": 8,
         "sold": 4000000,
         "score": 87
     },
@@ -33,26 +33,26 @@
         "name": "Kingdom Hearts Re:Chain of Memories",
         "year": 2007,
         "plaftorm": "PlayStation 2",
-        "play order": 2,
-        "release order": 4,
-        "chronological order": 6,
+        "playOrder": 2,
+        "releaseOrder": 4,
+        "chronologicalOrder": 6,
         "score": 68
     },
     "kh-coded": {
         "name": "Kingdom Hearts Coded",
         "year": "2008",
         "platform": "mobile phone",
-        "play order": 6,
-        "release order": 5,
-        "chronological order": 9
+        "playOrder": 6,
+        "releaseOrder": 5,
+        "chronologicalOrder": 9
     },
     "kh-days": {
         "name": "Kingdom Hearts 358/2 Days",
         "year": "2009",
         "platform": "Nintendo DS",
-        "play order": 4,
-        "release order": 6,
-        "chronological order": 5,
+        "playOrder": 4,
+        "releaseOrder": 6,
+        "chronologicalOrder": 5,
         "sold": 1220000,
         "score": 75
     },
@@ -60,9 +60,9 @@
         "name": "Kingdom Hearts Birth by Sleep",
         "year": "2010",
         "platform": "PlayStation Portable",
-        "play order": 5,
-        "release order": 7,
-        "chronological order": 3,
+        "playOrder": 5,
+        "releaseOrder": 7,
+        "chronologicalOrder": 3,
         "sold": 1270000,
         "score": 82
     },
@@ -70,18 +70,18 @@
         "name": "Kingdom Hearts Re:coded",
         "year": "2010",
         "platform": "Nintendo DS",
-        "play order": 6,
-        "release order": 8,
-        "chronological order": 9,
+        "playOrder": 6,
+        "releaseOrder": 8,
+        "chronologicalOrder": 9,
         "score": 66
     },
     "kh-ddd": {
         "name": "Kingdom Hearts 3D: Dream Drop Distance",
         "year": "2013",
         "platform": "Nintendo 3DS",
-        "play order": 7,
-        "release order": 9,
-        "chronological order": 10,
+        "playOrder": 7,
+        "releaseOrder": 9,
+        "chronologicalOrder": 10,
         "sold": 511668,
         "score": 75
     },
@@ -94,7 +94,7 @@
             "Kingdom Hearts Re:Chain of Memories",
             "Kingdom Hearts 358/2 Days"
         ],
-        "release order": 10,
+        "releaseOrder": 10,
         "sold": 270000,
         "score": 77
     },
@@ -102,9 +102,9 @@
         "name": "Kingdom Hearts [Union | Unchained] χ",
         "year": "2015",
         "platform": "Android/iOS",
-        "play order": 9,
-        "release order": 11,
-        "chronological order": 2,
+        "playOrder": 9,
+        "releaseOrder": 11,
+        "chronologicalOrder": 2,
         "sold": 2000000,
         "score": 70
     },
@@ -117,7 +117,7 @@
             "Kingdom Hearts Birth by Sleep Final Mix",
             "Kingdom Hearts Re:coded"
         ],
-        "release order": 12,
+        "releaseOrder": 12,
         "sold": 404660,
         "score": 82
     },
@@ -129,24 +129,24 @@
             "Kingdom Hearts HD 1.5 Remix",
             "Kingdom Hearts HD 2.5 Remix"
         ],
-        "release order": 13,
+        "releaseOrder": 13,
         "sold": 1000000
     },
     "kh-0.2": {
         "name": "Kingdom Hearts 0.2: Birth by Sleep – A Fragmentary Passage",
         "year": "2017",
         "platform": "PlayStation 4",
-        "play order": 8,
-        "release order": 14,
-        "chronological order": 4,
+        "playOrder": 8,
+        "releaseOrder": 14,
+        "chronologicalOrder": 4,
         "score": 76
     },
     "kh-Xbackcover": {
         "name": "Kingdom Hearts χ Back Cover",
         "year": "2017",
         "platform": "PlayStation 4",
-        "release order": 14,
-        "chronological order": 1
+        "releaseOrder": 14,
+        "chronologicalOrder": 1
     },
     "kh-2.8": {
         "name": "Kingdom Hearts HD 2.8 Final Chapter Prologue",
@@ -157,7 +157,7 @@
             "Kingdom Hearts 0.2: Birth by Sleep – A Fragmentary Passage",
             "Kingdom Hearts χ Back Cover"
         ],
-        "release order": 14,
+        "releaseOrder": 14,
         "sales": 505000,
         "score": 76
     },
@@ -168,8 +168,8 @@
             "PlayStation 4",
             "Xbox One"
         ],
-        "play order": 10,
-        "release order": 15,
-        "chronological order": 11
+        "playOrder": 10,
+        "releaseOrder": 15,
+        "chronologicalOrder": 11
     }
 }

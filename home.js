@@ -1,3 +1,5 @@
+var khGames = getKhJSONDetails(); // Array of all KH games
+
 $(document).ready(function () {
     // // Set grey default state of scroll progress on document ready
     // advanceProgressBar(calculateScrollPercentage());
@@ -10,8 +12,6 @@ $(document).ready(function () {
         }
     });
 
-    getKhJSONDetails();
-
     // Scroll event listener
     $(document).scroll(function () { 
         advanceProgressBar(calculateScrollPercentage());
@@ -19,6 +19,8 @@ $(document).ready(function () {
 
     // Bootstrap Scrollspy - automatically update links in navbar on scroll
     $('body').scrollspy({target: ".navbar"});
+
+    console.log(sortGamesByReleaseOrder());
 });
 
 /**
@@ -62,5 +64,56 @@ function getKhJSONDetails() {
         console.log(khGames);
     });
 
+    return khGames;
+}
+
+/**
+ * Sort the games by the order they should be played
+ * @param {array} games the array of game-details objects
+ */
+function sortGamesByPlayOrder() {
+    khGames.sort(function(a, b) { return a.playOrder - b.playOrder }); // Comparator function to tell JS how to compare the items when sorting
+    return khGames;
+}
+
+/**
+ * Sort the games by chronological order they are set in the KH universe
+ */
+function sortGamesByChronologicalOrder() {
+    khGames.sort(function(a,b) {
+        // Comparator function to tell JS how to compare the items when sorting
+        // This comparator inlcudes cases where the key doesn't exist
+        // a < b = -1, a > b = 1, a==b = 0
+        if (!a.chronologicalOrder) {
+            return -1;
+        } else if (!b.chronologicalOrder) {
+            return 1;
+        } else if (!a.chronologicalOrder && !b.chronologicalOrder) {
+            return 0;
+        }
+        return a.chronologicalOrder - b.chronologicalOrder;
+    }); 
+    return khGames;
+}
+
+/**
+ * Sort the games by the year they were released
+ */
+function sortGamesByReleaseOrder() {
+    khGames.sort(function(a,b) {
+        // Comparator function to tell JS how to compare the items when sorting
+        // Compare by release year, then if both the same then give bundled game priority (higher up list)
+        var order = a.releaseOrder - b.releaseOrder;
+        if (order == 0) {
+            if (!b.games) {
+                return -1;
+            } else if (!a.games) {
+                return 1;
+            } else if (!a.games && !b.games) {
+                return 0;
+            }
+        }
+        return order;
+    });
     return khGames;
 }
