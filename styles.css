@@ -1,7 +1,8 @@
 body {
     /* Padding needed so that the .fixed-top .navbar doesn't cover the content.
     .sticky-top gets around this but doesn't work with IE (what a surprise) */
-    padding-top: 56px;
+    /* EDIT: No longer being used (switched back to .sticky-top), but kept here just in case I decide to switch back */
+    /* padding-top: 56px; */
 }
 
 .nav-item {
