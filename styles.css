@@ -5,6 +5,7 @@ body {
     /* padding-top: 56px; */
 }
 
+/* Changing the colour of the body isn't working so this is a workaround */
 #bgcolour-wrapper {
     background-color: #4f4639;
     color: white;
@@ -27,4 +28,9 @@ body {
     height: 10px;
     background-color: yellowgreen;
     width: 0%;
+}
+
+/* Fullpage navigation dots */
+#fp-nav ul li a span {
+    background: white;
 }
