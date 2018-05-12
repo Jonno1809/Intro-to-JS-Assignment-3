@@ -2,7 +2,9 @@ $(document).ready(function () {
     // // Set grey default state of scroll progress on document ready
     // advanceProgressBar(calculateScrollPercentage());
 
+    // Setup fullpage
     $('#fullpage').fullpage({
+        navigation: true,
         onLeave: function(index, nextIndex, direction) {
             advanceProgressBar(calculateScrollPercentage());
         }
@@ -27,6 +29,7 @@ function advanceProgressBar(percentage) {
 }
 
 /**
+ * @deprecated due to not working for fullpage.js - use @function calculateScrollPercentage(sectionIndex) instead
  * Calculate the percentage of how much the page has been scrolled
  */
 function calculateScrollPercentage() {
@@ -38,4 +41,8 @@ function calculateScrollPercentage() {
         return percentage;
     }
     return 100; // If can't find window height, just fill progress bar
+}
+
+function calculateScrollPercentage(sectionIndex) {
+
 }
