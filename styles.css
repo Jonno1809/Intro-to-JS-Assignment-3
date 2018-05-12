@@ -34,3 +34,23 @@ body {
 #fp-nav ul li a span {
     background: white;
 }
+
+/* Dot point for list on right side instead of left */
+.rtl {
+    direction: rtl
+}
+
+/* Just to add a bit of left and right padding */
+.pad {
+    padding: 0 35px;
+}
+
+img {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.game {
+    border-color: white;
+    border-width: 2px;
+}
