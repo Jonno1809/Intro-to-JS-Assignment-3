@@ -8,7 +8,7 @@ $(document).ready(function () {
     });
 
     // Bootstrap Scrollspy - automatically update links in navbar on scroll
-    $('body').scrollspy({target: ".navbar", offset: 100});
+    $('body').scrollspy({target: ".navbar"});
 });
 
 /**

@@ -5,6 +5,11 @@ body {
     /* padding-top: 56px; */
 }
 
+main {
+    background-color: #4f4639;
+    color: white;
+}
+
 .nav-item {
     /* margin: 10px; */
     padding: 0px 20px;
