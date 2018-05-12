@@ -49,16 +49,16 @@ function calculateScrollPercentage(sectionIndex) {
 }
 
 /**
- * Read the kh-details.json file and returns as a json object
+ * Read the kh-details.json file and returns an array of json objects (games in this case)
  */
 function getKhJSONDetails() {
-    var khGames = {};
+    var khGames = [];
 
     $.getJSON("kh-details.json", function(json) {
-        khGames = json;
-        // $.each(json, function(key, value) {
-        //     khGames.push(value);
-        // });
+        // khGames = json;
+        $.each(json, function(key, value) {
+            khGames.push(value);
+        });
         console.log(khGames);
     });
 
