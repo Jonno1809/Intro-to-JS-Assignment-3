@@ -1,3 +1,7 @@
+/* @author Jonathan Simmons
+* Student Id: u3141072
+*/
+
 body {
     /* Padding needed so that the .fixed-top .navbar doesn't cover the content.
     .sticky-top gets around this but doesn't work with IE (what a surprise) */
@@ -12,12 +16,7 @@ body {
     color: white;
 }
 
-.nav-item {
-    /* margin: 10px; */
-    padding: 0px 20px;
-    text-align: center;
-}
-
+/* Scroll progress bar container */
 #progress-bar {
     height: 10px;
     background-color: grey;
@@ -25,6 +24,7 @@ body {
     position: fixed;
 }
 
+/* Actual scroll bar indication */
 #progress-indicator {
     height: 10px;
     background-color: yellowgreen;
@@ -36,22 +36,7 @@ body {
     background: white;
 }
 
-/* Dot point for list on right side instead of left */
-.rtl {
-    direction: rtl
+/* Divide each section up */
+.section {
+    border-top: 1px solid white
 }
-
-/* Just to add a bit of left and right padding */
-.pad {
-    padding: 0 35px;
-}
-
-img {
-    padding-left: 0px;
-    padding-right: 0px;
-}
-
-/* #pie-chart {
-    height: 200px;
-    width: 200px;
-} */

@@ -35,7 +35,7 @@
     "kh-re:com": {
         "name": "Kingdom Hearts Re:Chain of Memories",
         "year": "2007",
-        "plaftorm": "PlayStation 2",
+        "platform": "PlayStation 2",
         "playOrder": 2,
         "releaseOrder": 4,
         "chronologicalOrder": 6,
@@ -45,7 +45,7 @@
     "kh-coded": {
         "name": "Kingdom Hearts Coded",
         "year": "2008",
-        "platform": "mobile phone",
+        "platform": "Mobile Phone",
         "playOrder": 6,
         "releaseOrder": 5,
         "chronologicalOrder": 9,
